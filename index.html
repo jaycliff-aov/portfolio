@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>ESPC Presents: The Online Portfolio of Jaycliff Arcilla, Webmaster / Web Developer</title>
+        <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
+        <!-- <link rel="stylesheet" type="text/css" href="fonts/staravenue.css" /> -->
+        <link rel="stylesheet" type="text/css" href="fonts/proxima_nova.css" />
+        <style type="text/css">
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            
+            body {
+                background-color: #202020;
+                font-family: 'proxima-nova';
+                padding-top: 40px;
+            }
+
+            .flex {
+                align-items: center;
+                display: flex;
+            }
+            
+            .container {
+                width: 960px;
+                margin: 0 auto;
+            }
+            
+            .container h2 {
+                font-size: 48px;
+                /* font-size: 32px; */
+                font-weight: normal;
+                letter-spacing: 0.2em;
+                color: #ffffff;
+                padding: 20px 0 20px 20px;
+            }
+            
+            .container blockquote {
+                position: relative;
+                background: transparent;
+                color: #ffffff;
+                border-left: 10px solid #202020;
+                border-right: 10px solid #202020;
+                margin: 5px 20px 20px;
+                padding: 10px 20px;
+                text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+                /* quotes: "\201C""\201D""\2018""\2019"; */
+            }
+            
+            .container blockquote p {
+                font-size: 2em;
+                font-style: italic;
+                font-family: "Times New Roman";
+            }
+            
+            .container blockquote p span {
+                display: block;
+                text-align: right;
+                font-size: 1rem;
+                font-style: normal;
+                margin-top: 20px;
+                font-family: 'proxima-nova';
+                text-shadow: none;
+            }
+            
+            #header-wrap {
+                background-color: #0f0f0f;
+                position: fixed;
+                width: 100%;
+                top: 0;
+                left: 0;
+                box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.8);
+                z-index: 99;
+            }
+            
+            #header {
+                /* Hides the stupid browser behavior when elements with stretchy widths are cut offscreen  */
+                background-color: #0f0f0f;
+            }
+            
+            #header > div {
+                box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                -webkit-box-sizing: border-box;
+                -ms-box-sizing: border-box;
+                -o-box-sizing: border-box;
+            }
+            
+            #site-name {
+                align-items: center;
+                display: flex;
+                float: left;
+                width: 60%;
+                height: 40px;
+                padding-left: 10px;
+                text-transform: uppercase;
+                /* font-size: 1.5em; */
+                font-size: 24px;
+                line-height: 40px;
+                cursor: default !important;
+            }
+            
+            #site-name a {
+                text-decoration: none;
+                color: #ffffff;
+                text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.25);
+            }
+            
+            #site-name span {
+                margin-left: 15px;
+                /* font-size: 0.6em; */
+                font-size: 16px;
+                color: #606060;
+                text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+            }
+            
+            #navigation {
+                float: right;
+                width: 40%;
+                text-align: right;
+            }
+            
+            #navigation ul {
+                list-style: none;
+                float: right;
+            }
+            
+            #navigation ul li {
+                float: left;
+            }
+            
+            #navigation ul li a {
+                display: block;
+                padding: 0px 15px;
+                height: 40px;
+                line-height: 40px;
+                font-size: 12px;
+                text-decoration: none;
+                color: #ffffff;
+                text-transform: uppercase;
+                box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                -webkit-box-sizing: border-box;
+                -o-box-sizing: border-box;
+                -ms-box-sizing: border-box;
+            }
+            
+            #navigation ul li a:link,
+            #navigation ul li a:visited {
+                color: #808080;
+            }
+            
+            #navigation ul li a:hover,
+            #navigation ul li a:active,
+            #navigation ul li.current a {
+                background-color: rgba(255, 255, 255, 0.06);
+                color: #ffffff;
+            }
+            
+            /*
+            #navigation ul li.current a {
+                border-bottom: solid 2px #a00000;
+                cursor: default !important;
+            }
+            */
+            
+            #about {
+                margin: 20px auto;
+                background-color: rgba(0, 0, 0, 0.9);
+                padding: 20px;
+                line-height: 1.75em;
+                color: #a0a0a0;
+                letter-spacing: 0.2em;
+                text-align: justify;
+                border-radius: 2px;
+                box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                -webkit-box-sizing: border-box;
+                -o-box-sizing: border-box;
+                -ms-box-sizing: border-box;
+            }
+            
+            #about:before,
+            #about:after {
+                content: " ";
+                display: block;
+                border-bottom: dotted 1px #404040;
+                margin-bottom: 10px;
+            }
+            
+            #about:after {
+                clear: both;
+                margin-bottom: 0px;
+                margin-top: 10px;
+            }
+
+            #about .flex {
+                margin: 20px 0;
+            }
+            
+            #about img {
+                border-radius: 2px;
+                display: block;
+            }
+
+            #about img.fl {
+                margin: 0 20px 0 0;
+            }
+            
+            #about span {
+                color: #ffffff;
+                font-size: 1.25em;
+                font-weight: bold;
+            }
+            
+            #webworks {
+                background-color: rgba(0, 0, 0, 0.9);
+                margin: 20px auto;
+                border-radius: 2px;
+            }
+            
+            #webworks > div {
+                box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                -webkit-box-sizing: border-box;
+                -o-box-sizing: border-box;
+                -ms-box-sizing: border-box;
+            }
+            
+            #webworks .thumbnails {
+                float: left;
+                box-sizing: border-box;
+                width: 320px;
+                min-height: 240px;
+                max-height: 480px;
+                padding: 5px;
+            }
+            
+            #webworks .thumbnails ul {
+                list-style: none;
+                width: 300px;
+                margin: 0 auto;
+            }
+            
+            #webworks .thumbnails ul li {
+                float: left;
+                margin: 5px;
+            }
+            
+            #webworks .thumbnails ul li a,
+            #webworks .thumbnails ul li a img {
+                display: block;
+            }
+            
+            #webworks .thumbnails ul li a {
+                text-decoration: none;
+                opacity: 0.4;
+                transition: opacity 0.12s ease 0;
+                -moz-transition: opacity 0.12s ease 0;
+                -webkit-transition: opacity 0.12s ease 0;
+                -ms-transition: opacity 0.12s ease 0;
+                -o-transition: opacity 0.12s ease 0;
+            }
+            
+            #webworks .thumbnails ul li.on a {
+                opacity: 1;
+                cursor: default !important;
+            }
+            
+            #webworks .screenshots {
+                position: relative;
+                float: left;
+                width: 640px;
+                height: 480px;
+                padding: 10px;
+            }
+            
+            #webworks .screenshots li {
+                display: none;
+            }
+            
+            #webworks .screenshots li.on {
+                display: block;
+            }
+            
+            #webworks .screenshots li img {
+                width: 100%;
+                max-width: 620px;
+                max-height: 460px;
+            }
+            
+            #wordworks {
+                background-color: rgba(0, 0, 0, 0.9);
+                margin: 20px auto;
+                border-radius: 2px;
+            }
+            
+            #articles {
+                padding: 10px 20px 20px;
+                color: #ffffff;
+            }
+            
+            #articles div.article {
+                float: left;
+                width: 215px;
+                margin-left: 20px;
+                font-size: 12px;
+                text-align: justify;
+            }
+            
+            #articles div.article:nth-child(4n+1) {
+                margin-left: 0px;
+                clear: left;
+            }
+            
+            #articles div.article:nth-child(1n+5) {
+                margin-top: 20px;
+                border-top: solid 2px #808080;
+                padding-top: 20px;
+            }
+            
+            #articles div.article > * {
+                margin-top: 20px;
+            }
+            
+            #articles div.article > *:first-child {
+                margin-top: 0px;
+            }
+            
+            #articles div.article h3 {
+                font-size: 18px;
+                font-weight: normal;
+                text-align: left;
+            }
+            
+            #articles div.article h3 a {
+                color: #ffffff;
+            }
+            
+            #articles div.article h3 a:link, #articles div.article h3 a:visited {
+                text-decoration: none;
+            }
+            
+            #articles div.article h3 a:hover, #articles div.article h3 a:active {
+                text-decoration: underline;
+            }
+            
+            #softworks {
+                background-color: rgba(0, 0, 0, 0.9);
+                margin: 20px auto;
+                border-radius: 2px;
+            }
+            
+            #footer {
+                margin: 0 auto 0;
+                padding-bottom: 20px;
+                color: #ffffff;
+                font-size: 10px;
+                text-transform: uppercase;
+            }
+            
+            #footer > div {
+                float: left;
+                box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                -webkit-box-sizing: border-box;
+                -o-box-sizing: border-box;
+                -ms-box-sizing: border-box;
+            }
+            
+            #footer div.left {
+                width: 70%;
+                padding-left: 10px;
+                color: #b0b0b0;
+            }
+            
+            #footer div.right {
+                width: 30%;
+                padding-right: 10px;
+                text-align: right;
+                color: #ffffff;
+                cursor: default !important;
+            }
+            
+            #footer div.right a {
+                text-decoration: none;
+                color: #ffffff;
+                opacity: 0.05;
+            }
+            
+            #footer a:link,
+            #footer a:visited {
+                text-decoration: none;
+                color: #ffffff;
+            }
+            
+            #footer a:hover,
+            #footer a:active {
+                text-decoration: none;
+                color: #ffffff;
+            }
+            
+            #curtain {
+                background-color: #000000;
+                position: fixed;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                z-index: 99999;
+            }
+            
+            .fl {
+                float: left;
+            }
+            
+            .fr {
+                float: right;
+            }
+            
+            /*
+                Patched 'clearfix' method (with custom additions)
+                Original article of method: http://www.yuiblog.com/blog/2010/09/27/clearfix-reloaded-overflowhidden-demystified
+            */
+            
+            .clearfix:before, /* Including this :before pseudo-element prevents margin collapse at the top of containing block (CSS-generated content seems to negate margin collapse with html-content) */
+            .clearfix:after {
+                content: ".";
+                display: block;
+                height: 0px;
+                line-height: 0px; /* Nullify inherited line-height value */
+                font-size: 0px; /* Nullify inherited font-size value */
+                overflow: hidden;
+                visibility: hidden; /* Just in case the content is still visible even though overflow:hidden is previously declared... */
+            }
+            
+            .clearfix:after {
+                clear: both; /* The actual clearing part of this whole shebang. It is separately declared because :before doesn't need clearing */
+            }
+            
+            /* For older versions of IE (5.5/6/7). zoom:1 triggers the hasLayout property of the containing block (which in turn 'clears' floated elements) for these pesky browsers. IE8 supports both :before and :after pseudo-elements */
+            .clearfix {
+                zoom: 1;
+            }
+
+            /* https://stackoverflow.com/questions/29546550/flexbox-4-items-per-row */
+
+            .item-container {
+                color: #ffffff;
+                display: flex;
+                flex-wrap: wrap;
+                /* justify-content: space-between; */
+                margin: -20px 0 0 -20px;
+                padding: 10px 20px 20px;
+            }
+
+            .item-container > div {
+                /* flex: 1; */
+                font-size: 12px;
+                margin-left: 20px;
+                margin-top: 20px;
+                text-align: justify;
+                /* width: 25%; */
+                width: 215px;
+            }
+            
+            /* .item-container > div:nth-child(4n+1) {
+                margin-left: 0px;
+                clear: left;
+            } */
+            
+            .item-container > div:nth-child(1n+5) {
+                /* margin-top: 20px; */
+                border-top: solid 2px #808080;
+                padding-top: 20px;
+            }
+            
+            .item-container > div > * {
+                margin-top: 20px;
+            }
+            
+            .item-container > div > *:first-child {
+                margin-top: 0px;
+            }
+            
+            .item-container > div h3 {
+                font-size: 18px;
+                font-weight: normal;
+                text-align: left;
+            }
+            
+            .item-container > div h3 a {
+                color: #ffffff;
+            }
+            
+            .item-container > div h3 a:link,
+            .item-container > div h3 a:visited {
+                text-decoration: none;
+            }
+            
+            .item-container > div h3 a:hover,
+            .item-container > div h3 a:active {
+                text-decoration: underline;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Template by Jaycliff Arcilla -->
+        <noscript><div style="display: none;"></noscript>
+        <div id="curtain"></div>
+        <noscript></div></noscript>
+        <div id="header-wrap">
+            <div id="header" class="container clearfix">
+                <div id="site-name"><a href="/">Jaycliff Arcilla</a> <span>Webmaster / Web Developer</span></div>
+                <div id="navigation">
+                    <ul>
+                        <!--
+                        <li class="current"><a href="#about">About</a></li>
+                        <li><a href="#webworks">Softworks</a></li>
+                        <li><a href="#wordworks">Wordworks</a></li>
+                        -->
+                        <li><a href="mailto:jaycliff.a@agentsofvalue.com">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="about" class="container">
+            <div class="flex">
+                <img class="fl" src="images/jaycliff.jpg" alt="Jaycliff Arcilla" width="150" height="150" />
+                <p>Hi, my name is <span>Jaycliff Arcilla</span>. I am an avid vanilla <span>JavaScripter</span>. I do general <span>website maintenance</span>, traditional <span>front-end development</span>, and the occasional <span>web design</span>. I also make open-web-technology-based <span>music applications</span> and experimental <span>games</span> as side projects. <span>I am what I do</span>.</p>
+            </div>
+        </div>
+        <div id="softworks" class="container clearfix">
+            <h2>Softworks</h2>
+            <blockquote>
+                <p>...with proper design, the features come cheaply. This approach is arduous, but continues to succeed. <span>- Dennis Ritchie</span></p>
+            </blockquote>
+            <div class="item-container">
+                <div>
+                    <h3><a href="https://github.com/jaycliff/bar-slider" target="_blank">Bar Slider</a></h3>
+                    <p>Custom bar-style slider for your html5 projects.</p>
+                </div>
+                <div>
+                    <h3><a href="https://github.com/jaycliff/control-knob" target="_blank">Control Knob</a></h3>
+                    <p>Custom "volume-style" control knobs for your html5 project!</p>
+                </div>
+                <div>
+                    <h3><a href="https://github.com/jaycliff/continuous-control-knob" target="_blank">Continuous Control Knob</a></h3>
+                    <p>Custom "volume-style" continuous control knobs for your html5 project!</p>
+                </div>
+                <div>
+                    <h3><a href="https://github.com/jaycliff/custom_dialogue_box" target="_blank">Custom Dialogue Box</a></h3>
+                    <p>Custom-made asynchronous dialogue boxes as alternatives for the browser default ones.</p>
+                </div>
+                <div>
+                    <h3><a href="https://github.com/jaycliff/pebble-slider" target="_blank">Pebble Slider</a></h3>
+                    <p>Custom traditional slider bars for your html5 project.</p>
+                </div>
+                <div>
+                    <h3><a href="https://github.com/jaycliff/customSelectBox" target="_blank">Custom Select Box</a></h3>
+                    <p>Simple Chosen-like select element replacement, only more garbage collector-friendly.</p>
+                </div>
+                <div>
+                    <h3><a href="https://github.com/jaycliff/Metronome" target="_blank">Metronome</a></h3>
+                    <p>A web-worker-based ticker for applications that require tempo-based routines.</p>
+                </div>
+                <div>
+                    <h3><a href="https://brix-1492e.firebaseapp.com/" target="_blank">Brix</a></h3>
+                    <p>Retro-style brick game.</p>
+                </div>
+            </div>
+        </div>
+        <div id="webworks" class="container clearfix">
+            <h2>Webworks</h2>
+            <blockquote>
+                <p>Be drawn to the visual arts for it can expand your imagination. <span>- Barbara Januszkiewicz</span></p>
+            </blockquote>
+            <div class="thumbnails">
+                <ul class="clearfix">
+                    <li class="on"><a href="#"><img src="images/medikane-thumb.png" width="50" height="50" /></a></li>
+                    <li><a href="#"><img src="images/cpme-thumb.png" width="50" height="50" /></a></li>
+                    <li><a href="#"><img src="images/gj-thumb.png" width="50" height="50" /></a></li>
+                    <li><a href="#"><img src="images/pe-thumb.png" width="50" height="50" /></a></li>
+                    <li><a href="#"><img src="images/cpw-thumb.png" width="50" height="50" /></a></li>
+                    <li><a href="#"><img src="images/pbi-thumb.png" width="50" height="50" /></a></li>
+                    <li><a href="#"><img src="images/nmc-thumb.png" width="50" height="50" /></a></li>
+                    <li><a href="#"><img src="images/ebh-thumb.png" width="50" height="50" /></a></li>
+                    <li><a href="#"><img src="images/gja-thumb.png" width="50" height="50" /></a></li>
+                    <li><a href="#"><img src="images/il-thumb.png" width="50" height="50" /></a></li>
+                    <li><a href="#"><img src="images/eiu-thumb.png" width="50" height="50" /></a></li>
+                    <li><a href="#"><img src="images/bmt-thumb.png" width="50" height="50" /></a></li>
+                </ul>
+            </div>
+            <div class="screenshots">
+                <ul class="clearfix">
+                    <li class="on"><img src="images/medikane-shot.png" alt="Medikane" width="620" height="460" /></li>
+                    <li><img src="images/cpme-shot.png" alt="Commercial Property Made Easy" width="620" height="460" /></li>
+                    <li><img src="images/gj-shot.png" alt="Gray Johnson (proposed redesign template)" width="620" height="460" /></li>
+                    <li><img src="images/pe-shot.png" alt="Property Edge" width="620" height="460" /></li>
+                    <li><img src="images/cpw-shot.png" alt="Commercial Property Really Works" width="620" height="460" /></li>
+                    <li><img src="images/pbi-shot.png" alt="Permanent Beauty Ink" width="620" height="460" /></li>
+                    <li><img src="images/nmc-shot.png" alt="Negotiating Master Class" width="620" height="460" /></li>
+                    <li><img src="images/ebh-shot.png" alt="Elliot Beautiful Hair" width="620" height="460" /></li>
+                    <li><img src="images/gja-shot.png" alt="Gray Johnson" width="620" height="460" /></li>
+                    <li><img src="images/il-shot.png" alt="Commercial Property Investor Lab" width="620" height="460" /></li>
+                    <li><img src="images/eiu-shot.png" alt="Executive iPad User" width="620" height="460" /></li>
+                    <li><img src="images/bmt-shot.png" alt="Best Mac Tools" width="620" height="460" /></li>
+                </ul>
+            </div>
+        </div>
+        <div id="wordworks" class="container clearfix">
+            <h2>Wordworks</h2>
+            <blockquote>
+                <p>It is perfectly okay to write garbage, as long as you edit brilliantly. <span>- C. J. Cherryh</span></p>
+            </blockquote>
+            <div id="articles" class="clearfix">
+                <div class="article">
+                    <h3><a target="_blank" href="articles/formatting_content.pdf">Simple Newsletter Content Formatting For Dummies</a></h3>
+                    <p>This article will teach you how to spice up your newsletter content by using basic content formatting techniques.</p>
+                </div>
+                <div class="article">
+                    <h3><a target="_blank" href="articles/freeing_the_word_free.pdf">Freeing the Word "Free" (rewrite)</a></h3>
+                    <p>So what's with the seemingly innocuous word? Why do we have to be cautious on using it in our newsletter? Find out why, and the truth shall set you free.</p>
+                </div>
+                <div class="article">
+                    <h3><a target="_blank" href="articles/learning_em_from_other_sources.pdf">Learning Email Marketing Tips From Other Sources</a></h3>
+                    <p>Explore some unconventional ways of jazzing up your own newsletter. Improvising goes a long way.</p>
+                </div>
+                <div class="article">
+                    <h3><a target="_blank" href="articles/no_reply.pdf">Some Thoughts About the "No-reply" Email</a></h3>
+                    <p>Jaycliff ponders on why newsletters should be reply-friendly. Read all about it right here.</p>
+                </div>
+                <div class="article">
+                    <h3><a target="_blank" href="articles/personalization_the_real_deal.pdf">Personalization: The Real Deal</a></h3>
+                    <p>Personalizing newsletters is serious business. Let the Cliffmeister enlighten you with his in-depth discussion on how to keep it real, Cliffy style.</p>
+                </div>
+                <div class="article">
+                    <h3><a target="_blank" href="articles/refferals.pdf">The Importance of Referrals in Email Marketing</a></h3>
+                    <p>Indeed, referrals are really important. Why don't you read all about it? You can thank me later, buddy. :)</p>
+                </div>
+                <div class="article">
+                    <h3><a target="_blank" href="articles/sign_up_boxes.pdf">Why Plain Ol' Sign-up Boxes Just Aren't Enough</a></h3>
+                    <p>Even sign-up boxes need some lovin'. Dress 'em up properly&mdash;your boxes will love you. Really, no kidding.</p>
+                </div>
+                <div class="article">
+                    <h3><a target="_blank" href="articles/things_to_avoid.pdf">Some Things to Avoid in Email Marketing</a></h3>
+                    <p>If you don't avoid these, you're in for serious trouble. Go read all about 'em right here. Ignorance ain't always bliss, you know.</p>
+                </div>
+                <div class="article">
+                    <h3><a target="_blank" href="articles/three-bonus-tips.pdf">Three Bonus Tips in Email Marketing</a></h3>
+                    <p>Wait, why just three? Well, why not? These three could be a life-saver, so go read all about them. Now. You're welcome.</p>
+                </div>
+            </div>
+        </div>
+        <div id="footer" class="container clearfix">
+            <div class="left">Copyright &copy; <span id="year">2021</span> <a href="mailto:jaycliff.a@agentsofvalue.com">Jaycliff Arcilla</a> of <a href="http://eversun.ph/">Eversun Software Philippines Corporation (Davao)</a> &middot; All rights reserved</div>
+            <div class="right"><a href="http://en.wikipedia.org/wiki/Ikaruga">I will not die until I achieve something</a></div>
+        </div>
+        <!-- <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script> -->
+        <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript" src="js/jquery.backstretch.min.js"></script>
+        <script type="text/javascript">
+            (function ($) {
+                "use strict";
+                var $document = $(document), $window = $(window);
+                $document.ready(function () {
+                    //$('html').addClass('js');
+                    (function webworksSetup() {
+                        var $thumbnails = $('#webworks div.thumbnails li'),
+                            $screenshots = $('#webworks div.screenshots li'),
+                            current_item = 0;
+                        $thumbnails.find('a').on('click', function (event) { event.preventDefault(); });
+                        $thumbnails.each(function (index) {
+                            $thumbnails.eq(index).data('index', index);
+                            $thumbnails.eq(index).on('mousedown', function () {
+                                if (index !== current_item) {
+                                    $thumbnails.eq(current_item).removeClass('on');
+                                    $screenshots.eq(current_item).removeClass('on');
+                                    current_item = index;
+                                    $thumbnails.eq(index).addClass('on');
+                                    $screenshots.eq(index).addClass('on');
+                                }
+                            });
+                        });
+                    }());
+                    (function backstrechSetup() {
+                        var bg_urls = [
+                            //'images/site_background.png',
+                            'images/cool-wallpapers-hd-hd-wallpapers-tvmwbcga.jpg',
+                            'images/techy.jpg',
+                            'images/heavenly.jpg',
+                            'images/landscape.jpg',
+                            'images/technology1.jpg',
+                            'images/technology-free-blue-abstract-with-arrows-nature-windows-551642.jpg',
+                            'images/HD-backgrounds-1.jpg',
+                            'images/1711032.jpg',
+                            //'images/Background-HD.jpg',
+                            //'images/HD-backgrounds-2.jpg'
+                        ], options = { fade: 1000, duration: 20000 };
+                        $.backstretch(bg_urls, options);
+                        $('div.backstretch').css('opacity', 0.8);
+                        $window.on('unload', function () {
+                            $.backstretch('destroy', false);
+                        });
+                    }());
+                    document.getElementById('year').innerText = (new Date()).getFullYear();
+                    $window.on('load', function () {
+                        $('#curtain').fadeOut('slow');
+                    });
+                });
+            }(jQuery));
+        </script>
+    </body>
+</html>
